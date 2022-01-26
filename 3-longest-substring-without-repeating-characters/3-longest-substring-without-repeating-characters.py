@@ -1,5 +1,6 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
+        """O(n) time | O(1) space"""
         start = maxLength = 0
         usedChar = {}
         
