@@ -1,5 +1,6 @@
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
+        """O(log(n)) time | O(1) space"""
         low = 0
         high = len(nums) - 1
         insertPosition = 0
