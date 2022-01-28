@@ -1,16 +1,17 @@
 class Solution:
     """O(n) time | O(n) space"""
     def sortedSquares(self, nums: List[int]) -> List[int]:
-        left = 0
-        right = len(nums) - 1
-        output = []
+        l, r = 0, len(nums) - 1
+        output = [0] * len(nums)
         
-        while left <= right:
-            if abs(nums[left]) > abs(nums[right]):
-                output.append(nums[left]**2)
-                left += 1
+        while l <= r:
+            left, right = abs(nums[l]), abs(nums[r])
+            
+            if left > right:
+                output[r - l] = left * left
+                l += 1
             else:
-                output.append(nums[right]**2)
-                right -= 1
+                output[r - l] = right * right
+                r -= 1
                 
-        return output[::-1]
+        return output
